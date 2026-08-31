@@ -14,7 +14,7 @@ function generateUUID() {
 /**
  * Construit un objet ServiceEvent standardisé pour le producteur Kafka
  * @param {string} service - Le nom du service émetteur (ex: 'PADS')
- * @param {Array<string>} channels - Les canaux de notification (ex: ['WEB'])
+ * @param {Array<string>} channels - Les canaux de notification (ex: ['WEB', 'MAIL', 'PUSH'])
  * @param {string} title - Le titre de la notification
  * @param {string} message - Le contenu du message
  * @param {string} link - Le lien de redirection
@@ -27,7 +27,7 @@ function buildServiceEvent(service, channels, title, message, link, targetId) {
             eventId: generateUUID(),
             priority: "NORMAL",
             service: service || 'PADS',
-            channels: channels || ['WEB'],
+            channels: channels || ['WEB', 'MAIL', 'PUSH'],
             createdAt: new Date().toISOString()
         },
         content: {
