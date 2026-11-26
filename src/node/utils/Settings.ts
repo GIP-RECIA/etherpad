@@ -324,6 +324,10 @@ export type SettingsType = {
   },
   adminEmail: string | null,
   getPublicSettings: () => Pick<SettingsType, "title" | "skinVariants"|"randomVersionString"|"skinName"|"toolbar"| "exposeVersion"| "gitVersion" | "enablePadWideSettings" | "privacyBanner">,
+  notifications?: {
+    apiUrl?: string,
+    apiKey?: string,
+  },
 }
 
 const settings: SettingsType = {
