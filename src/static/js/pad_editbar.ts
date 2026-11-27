@@ -571,6 +571,8 @@ exports.padeditbar = new class {
     });
 
     this.registerCommand('timeslider_returnToPad', (cmd) => {
+      history.go(-2);
+      return;
       if (document.referrer.length > 0 &&
           document.referrer.substring(document.referrer.lastIndexOf('/') - 1,
               document.referrer.lastIndexOf('/')) === 'p') {
